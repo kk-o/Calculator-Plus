@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; // enables react
 import Display from './Display'; // calculator screen
-import ButtonContainer from './ButtonPanel'; // input buttons
+import ButtonContainer from './ButtonContainer'; // input buttons
 import calculate from '../methods/calculate'; // calculator logic
 import '../styles/App.css'; // calculator styling
 
