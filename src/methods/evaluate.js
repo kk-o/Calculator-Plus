@@ -1,4 +1,4 @@
-import Big from 'big.js';
+import Big from 'big.js'; // allows for arbitrary-precision decimal arithmetic
 
 export default function evaluate(firstNum, secondNum, operation) {
   const first = Big(firstNum || '0'); // first input number
