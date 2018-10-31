@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Display from './Display';
-import ButtonContainer from './ButtonPanel';
-import calculate from '../methods/calculate';
-import './App.css';
+import React, { Component } from 'react'; // enables react
+import Display from './Display'; // calculator screen
+import ButtonContainer from './ButtonPanel'; // input buttons
+import calculate from '../methods/calculate'; // calculator logic
+import '../styles/App.css'; // calculator styling
 
 /** Calculator+
  * - Main app -
