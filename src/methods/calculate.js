@@ -72,14 +72,54 @@ export default function calculate(obj, buttonName) {
       return {};
     }
 
-    // todo: handle decimal
-
-    // todo: handle equals
-
-    // todo: handle plus or minus
-
-    // todo: hanlde operations 
-
-    // todo: handle edge cases
-
+    if (buttonName === ".") { // if input was decimal, then...
+      if (obj.next) {
+        if (obj.next.includes(".")) { // check if input already has decimal 
+          return {};
+        }
+        return { next: obj.next + "." };
+      }
+      return { next: "0." };
+    }
+  
+    if (buttonName === "=") { // if input was '=', then...
+      if (obj.next && obj.operation) {
+        return {
+          total: evaluate(obj.total, obj.next, obj.operation),
+          next: null,
+          operation: null,
+        };
+      } else {
+        return {}; // if input was '=' with no operation, just do nothing
+      }
+    }
+  
+    if (buttonName === "+/-") { // if input was plus or minus, then... 
+      if (obj.next) {
+        return { next: (-1 * parseFloat(obj.next)).toString() };
+      }
+      if (obj.total) {
+        return { total: (-1 * parseFloat(obj.total)).toString() };
+      }
+      return {};
+    }
+  
+    if (obj.operation) { // if there's already an existing operation, then... 
+      return {
+        total: evaluate(obj.total, obj.next, obj.operation),
+        next: null,
+        operation: buttonName,
+      };
+    }
+    
+    // if there's no existing operation, check if there's a number input
+    if (!obj.next) { // if there's no input number yet, just save the operation 
+      return { operation: buttonName };
+    }
+  
+    return { // saves the operation and shifts 'next' into 'total'
+      total: obj.next,
+      next: null,
+      operation: buttonName,
+    };
 }
