@@ -7,7 +7,7 @@ Built using *create-react-app*. Be sure to check out the [full create-react-app 
 Note: open to pull requests of any kind, feel free to reach out.
 
 
-Live demo available [here](https://demo.github.io/calculatorpro).
+Live demo available [here](https://kk-o.github.io/Calculator-Plus).
 ---
 
 Installation
