@@ -17,5 +17,4 @@ export default function evaluate(firstNum, secondNum, operation) {
     default: 
         throw Error(`Sorry, but: ${operation} failed`);
     }
-
 }
